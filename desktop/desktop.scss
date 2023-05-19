@@ -59,7 +59,7 @@
     top: 3px;
     border-radius: 50%;
     background-color: var(--secondary);
-    transition: 0.2s all ease;
+    transition: cubic-bezier(.22,1.29,.64,1.02);
     z-index: 200;
   }
   
