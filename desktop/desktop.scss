@@ -62,3 +62,10 @@
   .homepage-toggle-checkbox:checked + .homepage-toggle-thumb:before {
     transform: translateX(26px);
   }
+
+  .hpt-db{
+    background-color: var(--tertiary);
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+  }
