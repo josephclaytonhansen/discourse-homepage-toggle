@@ -49,13 +49,12 @@
   .homepage-toggle-thumb:before {
     all: revert;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 28px;
+    width: 28px;
     position: absolute;
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
-    border:solid 2px var(--secondary-very-high);
     background-color: var(--secondary);
     transition: 0.2s all ease;
     z-index: 200;
