@@ -1,13 +1,11 @@
 <script type="text/discourse-plugin" version="0.0.1">
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
-
-        helper.h('div.hpt-db', [
-            helper.h('input.homepage-toggle-checkbox', {type:'checkbox'}, [
-                helper.h('div.homepage-toggle-thumb', [
-                    helper.h('i.fa.fa-grip-vertical.tt-left'),
-                    helper.h('i.fa.fa-list.tt-right'),
-                ])
+        helper.h('label.homepage-toggle-switch', [
+            helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'})
+            helper.h("span.homepage-toggle-thumb", [
+                helper.h("i.fa.fa-grip-vertical.tt-left"),
+                helper.h("i.fa.fa-list.tt-right"),
             ])
         ])
     ])
