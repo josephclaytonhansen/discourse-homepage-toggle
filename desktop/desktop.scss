@@ -1,0 +1,56 @@
+.homepage-toggle-switch {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+  }
+  
+  .homepage-toggle-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary);
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .tt-left {
+    position: relative;
+    left: 12px;
+    z-index: 1;
+  }
+  
+  .tt-right {
+    position: relative;
+    right: 10px;
+    z-index: 1;
+  }
+  
+  .homepage-toggle-thumb:before {
+    content: "";
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    transition: 0.2s all ease;
+    z-index: 2;
+  }
+  
+  .homepage-toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .homepage-toggle-checkbox:checked + .toggle-thumb:before {
+    transform: translateX(26px);
+  }
