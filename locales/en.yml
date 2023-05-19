@@ -1,0 +1,5 @@
+en:
+  theme_metadata:
+    description: A theme component that toggles between two homepages.
+    settings:
+      
