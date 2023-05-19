@@ -2,4 +2,7 @@ en:
   theme_metadata:
     description: A theme component that toggles between two homepages.
     settings:
+      elastic: Use elastic animation
+      icon_left: Icon on the left side of the toggle
+      icon_right: Icon on the right side of the toggle
       
