@@ -7,6 +7,8 @@
   
   .homepage-toggle-thumb {
     position: absolute;
+    width: 60px;
+    height: 34px;
     top: 0;
     left: 0;
     right: 0;
@@ -17,7 +19,7 @@
     background-color: var(--tertiary);
     border-radius: 40px;
     cursor: pointer;
-    color: white;
+    color: blue;
   }
   
   .tt-left {
@@ -29,7 +31,7 @@
   .tt-right {
     position: relative;
     right: 10px;
-    z-index: 1;
+    z-index: 100;
   }
   
   .homepage-toggle-thumb:before {
@@ -40,9 +42,9 @@
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: orange;
     transition: 0.2s all ease;
-    z-index: 2;
+    z-index: 200;
   }
   
   .homepage-toggle-checkbox {
