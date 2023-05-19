@@ -1,6 +1,6 @@
-icon_left:
-  default: "icon"
 icon_right:
+  default: "icon"
+icon_left:
   default: "icon"
 url_left:
   default: "localhost:4200/latest"
