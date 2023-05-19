@@ -51,6 +51,6 @@
     height: 0;
   }
   
-  .homepage-toggle-checkbox:checked + .toggle-thumb:before {
+  .homepage-toggle-checkbox:checked + .homepage-toggle-thumb:before {
     transform: translateX(26px);
   }
