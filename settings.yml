@@ -3,6 +3,6 @@ icon_right:
 icon_left:
   default: "icon"
 url_left:
-  default: "localhost:4200/latest"
+  default: "https://www.meta.discourse.org/latest"
 url_right:
-  default: "localhost:4200/admingrip"
+  default: "https://meta.discourse.org/c/theme-component/"
