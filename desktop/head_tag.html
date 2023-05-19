@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
 
     })
-    if (window.location.href == window.location.protocol + "//" + settings.url_right){
+    if (window.location.href == window.location.protocol + "//" + settings.url_left){
         if (!"toggled" in document.querySelector(".homepage-toggle-checkbox").classList){
         document.querySelector(".homepage-toggle-checkbox").click()
         document.querySelector(".homepage-toggle-checkbox").classList.add("toggled")
