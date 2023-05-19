@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
-        if (s == true){console.log(settings.right_url)} else {console.log(settings.left_url)}
+        if (s == true){window.location.replace(settings.url_right)} else {window.location.replace(settings.url_left)}
 
     })
 })
