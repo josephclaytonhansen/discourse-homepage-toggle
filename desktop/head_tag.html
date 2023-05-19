@@ -14,8 +14,11 @@ api.decorateWidget('header-icons:before', helper => {
         ])
     ])
 })
+elastic()
 
-if (settings.elastic){
-    document.querySelector(".homepage-toggle-thumb", ":before").classList.add(".elastic-homepage-toggle")
-}
+
 </script>
+<script defer >
+function elastic(){if (settings.elastic){
+    document.querySelector(".homepage-toggle-thumb", ":before").classList.add(".elastic-homepage-toggle")}
+}</script>
