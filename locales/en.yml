@@ -4,6 +4,6 @@ en:
     settings:
       icon_left: Icon on the left side of the toggle
       icon_right: Icon on the right side of the toggle
-      url_left: Homepage URL for the left icon
-      url_right: Homepage URL for the right icon
+      url_left: Homepage URL for the left icon. Use the full URL, including "https://"
+      url_right: Homepage URL for the right icon. Use the full URL, including "https://"
       
