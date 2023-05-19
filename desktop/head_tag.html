@@ -19,7 +19,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
-        if (s == true){window.location.href = settings.right_url} else {window.location.href = settings.left_url}
+        if (s == true){var nURL = settings.right_url} else {nURL = settings.left_url}
+        window.history.replaceState({additionalInformation:''}, '', nURL)
 
     })
 })
