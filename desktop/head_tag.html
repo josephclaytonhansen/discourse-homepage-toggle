@@ -15,6 +15,23 @@ api.decorateWidget('header-icons:before', helper => {
     ])
 })
 
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
@@ -26,11 +43,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
 
     })
-    let cl = false;
+    document.cookie = "toggled=false;"
     if (window.location.href == window.location.protocol + "//" + settings.url_right){
-        if (cl == false){
+        if (getCookie('toggled' == 'false')){
         document.querySelector(".homepage-toggle-checkbox").click()
-        cl=true
+        document.cookie = "toggled=true;"
     }
     }
 })
