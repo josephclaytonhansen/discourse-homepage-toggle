@@ -16,7 +16,12 @@ api.decorateWidget('header-icons:before', helper => {
 })
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {console.log(document.querySelector(".homepage-toggle-checkbox").checked)})
+    document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
+    {
+        let s = document.querySelector(".homepage-toggle-checkbox").checked
+        if (s == true){var side = "right"} else {side = "left"}
+        console.log(side)
+    })
 })
 
 </script>
