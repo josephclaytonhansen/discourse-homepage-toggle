@@ -52,7 +52,7 @@
     height: 28px;
     width: 28px;
     position: absolute;
-    left: 4px;
+    left: 2px;
     bottom: 4px;
     top: 3px;
     border-radius: 50%;
@@ -69,7 +69,7 @@
   }
   
   .homepage-toggle-checkbox:checked + .homepage-toggle-thumb:before {
-    transform: translateX(30px);
+    transform: translateX(32px);
   }
 
   .hpt-db{
