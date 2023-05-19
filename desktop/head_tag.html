@@ -2,6 +2,7 @@
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
         helper.h('p', 'hello world'),
+        helper.h('input', {type: 'checkbox'}),
         helper.h('label.homepage-toggle-switch', [
             helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'}, [
                 helper.h('span.homepage-toggle-thumb', [
