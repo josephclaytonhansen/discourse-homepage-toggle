@@ -2,9 +2,9 @@
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
 
-        helper.h('label', [
-            helper.h('input', {type: 'checkbox'}, [
-                helper.h('span', [
+        helper.h('label.homepage-toggle-switch', [
+            helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'}, [
+                helper.h('span.homepage-toggle-thumb', [
                     helper.h('svg.fa.fa-grip-vertical.tt-left', ''),
                     helper.h('svg.fa.fa-list.tt-right', '')
                 ])
