@@ -2,3 +2,7 @@ icon_left:
   default: "icon"
 icon_right:
   default: "icon"
+url_left:
+  default: "localhost:4200/latest"
+url_right:
+  default: "localhost:4200/admin"

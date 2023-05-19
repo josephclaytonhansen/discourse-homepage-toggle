@@ -1,5 +1,5 @@
 <script type="text/discourse-plugin" version="0.0.1">
-const { iconNode } = require("discourse-common/lib/icon-library")
+    const { iconNode } = require("discourse-common/lib/icon-library")
 let left = settings.icon_left
 let right = settings.icon_right
  
@@ -19,8 +19,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
-        if (s == true){var side = "right"} else {side = "left"}
-        console.log(side)
+        if (s == true){window.location.href = settings.right_url} else {window.location.href = settings.left_url}
+
     })
 })
 
