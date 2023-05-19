@@ -5,4 +5,4 @@ icon_right:
 url_left:
   default: "localhost:4200/latest"
 url_right:
-  default: "localhost:4200/admin"
+  default: "localhost:4200/admingrip"
