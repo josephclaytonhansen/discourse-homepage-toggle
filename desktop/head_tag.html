@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (s == true){window.location.replace(window.location.protocol + "//" + settings.url_right)} else {window.location.protocol + "//" + window.location.replace(settings.url_left)}
 
     })
-    if (window.location.href == window.location.protocol + "//" + settings.url_right){click(document.querySelector(".homepage-toggle-checkbox"))}
+    if (window.location.href == window.location.protocol + "//" + settings.url_right){document.querySelector(".homepage-toggle-checkbox").click()}
 })
 
 </script>
