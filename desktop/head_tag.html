@@ -1,7 +1,7 @@
 <script type="text/discourse-plugin" version="0.0.1">
 api.decorateWidget('header-icons:before', helper => {
-    return helper.h('div', [
-        helper.h('p Hello World', {title: 'hello world'})
+    return helper.h('li', [
+        helper.h('p', {title: 'hello world'}, 'hello world')
     ])
 })
 </script>
