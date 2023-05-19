@@ -1,6 +1,3 @@
-elastic:
-  type: bool
-  default: true
 icon_left:
   default: "icon"
 icon_right:
