@@ -17,7 +17,7 @@ api.decorateWidget('header-icons:before', helper => {
 
 function componentPrep(cooked)
   {
-    cooked.querySelector(".homepage-toggle-thumb", ":before").classList.add(".elastic-homepage-toggle")}
+    cooked.querySelector(".homepage-toggle-thumb", ":before").style.transition = "0.3s all cubic-bezier(.41,1.29,.64,1.02)!important;"}
 
 api.decorateCookedElement(componentPrep, {
         onlyStream: false, 

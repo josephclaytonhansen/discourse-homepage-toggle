@@ -60,10 +60,6 @@
     transition: 0.2s all ease;
     z-index: 200;
   }
-
-  .elastic-homepage-toggle{
-    transition: 0.3s all cubic-bezier(.41,1.29,.64,1.02)!important;
-  }
   
   .homepage-toggle-checkbox {
     all: revert;
