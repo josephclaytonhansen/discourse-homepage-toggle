@@ -2,7 +2,14 @@
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
 
-        helper.h('div.hpt-db', [])
+        helper.h('div.hpt-db', [
+            helper.h('input.homepage-toggle-checkbox', {type:'checkbox'}, [
+                helper.h('div.homepage-toggle-thumb', [
+                    helper.h('i.fa.fa-grip-vertical.tt-left'),
+                    helper.h('i.fa.fa-list.tt-right'),
+                ])
+            ])
+        ])
     ])
 })
 </script>
