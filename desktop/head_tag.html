@@ -14,11 +14,14 @@ api.decorateWidget('header-icons:before', helper => {
         ])
     ])
 })
-elastic(settings.elastic)
 
+function componentPrep(cooked)
+  {
+    cooked.querySelector(".homepage-toggle-thumb", ":before").classList.add(".elastic-homepage-toggle")}
+
+api.decorateCookedElement(componentPrep, {
+        onlyStream: false, 
+        id: 'toggle-homepage-elastic'
+      });
 
 </script>
-<script defer >
-function elastic(e){if (e){
-    document.querySelector(".homepage-toggle-thumb", ":before").classList.add(".elastic-homepage-toggle")}
-}</script>
