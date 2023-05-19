@@ -16,21 +16,6 @@ api.decorateWidget('header-icons:before', helper => {
 })
 
 
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
@@ -43,11 +28,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
 
     })
-    document.cookie = "toggled=false;"
     if (window.location.href == window.location.protocol + "//" + settings.url_right){
-        if (getCookie('toggled' == 'false')){
+        if ("toggled" !in document.querySelector(".homepage-toggle-checkbox").classList){
         document.querySelector(".homepage-toggle-checkbox").click()
-        document.cookie = "toggled=true;"
+        document.querySelector(".homepage-toggle-checkbox").classList.add("toggled")
     }
     }
 })
