@@ -2,17 +2,22 @@
     const { iconNode } = require("discourse-common/lib/icon-library")
 let left = settings.icon_left
 let right = settings.icon_right
- 
-api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li', [
-        helper.h('label.homepage-toggle-switch', [
-            helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'}),
-            helper.h("span.homepage-toggle-thumb", [
-                helper.h("i.tt-left", iconNode(right)),
-                helper.h("i.tt-right", iconNode(left))
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    if (window.location.href == settings.url_right || window.location.href == settings.url_left){
+        api.decorateWidget('header-icons:before', helper => {
+            return helper.h('li', [
+                helper.h('label.homepage-toggle-switch', [
+                    helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'}),
+                    helper.h("span.homepage-toggle-thumb", [
+                        helper.h("i.tt-left", iconNode(right)),
+                        helper.h("i.tt-right", iconNode(left))
+                    ])
+                ])
             ])
-        ])
-    ])
+        })
+    }
 })
 
 
