@@ -7,7 +7,7 @@ let right = settings.icon_right
 
 let temp = [settings.url_right.split("/latest")[0]+"/", settings.url_left.split("/latest")[0]+"/"]
 console.log(temp, window.location.href, window.location.href in temp)
-if (window.location.href in temp){
+if (window.location.href == temp[0] || window.location.href == temp[1]){
     api.decorateWidget('header-icons:before', helper => {
         return helper.h('li', [
             helper.h('label.homepage-toggle-switch', [
