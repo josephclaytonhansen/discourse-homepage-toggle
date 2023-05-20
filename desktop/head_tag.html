@@ -5,7 +5,8 @@ let right = settings.icon_right
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    if (window.location.href == settings.url_right || window.location.href == settings.url_left){
+    let temp = [settings.url_right.split("/latest")[0], settings.url_left.split("/latest")[0]]
+    if (window.location.href in temp){
         api.decorateWidget('header-icons:before', helper => {
             return helper.h('li', [
                 helper.h('label.homepage-toggle-switch', [
