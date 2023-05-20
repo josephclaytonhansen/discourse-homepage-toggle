@@ -1,32 +1,43 @@
 <script type="text/discourse-plugin" version="0.0.1">
-const {iconNode} = require("discourse-common/lib/icon-library")
+const {
+    iconNode
+} = require("discourse-common/lib/icon-library")
 let left = settings.icon_left
 let right = settings.icon_right
 
-var topMenuRoutes =component.siteSettings.top_menu.split('|').map(function(route) {
-        return '/' + route
-    });
 
-// The first page listed in the 'top_menu' setting is your homepage
-// lets assign it to a variable
-var homeRoute = topMenuRoutes[0];
+api.registerConnectorClass('below-site-header', 'homepage-toggle', {
 
-// This calls our code whenever the page changes
-api.onPageChange((url) => {
+    setupComponent(args, component) {
 
-    // Check if we're on the homepage 
-    if (url === "/" || url === homeRoute) {
-        api.decorateWidget('header-icons:before', helper => {
-            return helper.h('li', [
-                helper.h('label.homepage-toggle-switch', [
-                    helper.h('input.homepage-toggle-checkbox', {
-                        type: 'checkbox'}),
-                    helper.h("span.homepage-toggle-thumb", [
-                        helper.h("i.tt-left", iconNode(right)),
-                        helper.h("i.tt-right", iconNode(left))
+
+        var topMenuRoutes = component.siteSettings.top_menu.split('|').map(function(route) {
+            return '/' + route
+        });
+
+        // The first page listed in the 'top_menu' setting is your homepage
+        // lets assign it to a variable
+        var homeRoute = topMenuRoutes[0];
+
+        // This calls our code whenever the page changes
+        api.onPageChange((url) => {
+
+            // Check if we're on the homepage 
+            if (url === "/" || url === homeRoute) {
+                api.decorateWidget('header-icons:before', helper => {
+                    return helper.h('li', [
+                        helper.h('label.homepage-toggle-switch', [
+                            helper.h('input.homepage-toggle-checkbox', {
+                                type: 'checkbox'
+                            }),
+                            helper.h("span.homepage-toggle-thumb", [
+                                helper.h("i.tt-left", iconNode(right)),
+                                helper.h("i.tt-right", iconNode(left))
+                            ])
+                        ])
                     ])
-                ])
-            ])
+                })
+            }
         })
     }
 })
