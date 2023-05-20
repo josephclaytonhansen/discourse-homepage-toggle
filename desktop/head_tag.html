@@ -12,7 +12,7 @@ var right_route = settings.url_right.split("latest")[0]} else {right_route = set
 api.onPageChange((url) => {
 
     // Check if we're on the homepage 
-    if (url === "/" || url == left_route || url == right_route) {
+    if (window.location.href === "/" || window.location.href == left_route || window.location.href == right_route) {
         api.decorateWidget('header-icons:before', helper => {
             return helper.h('li', [
                 helper.h('label.homepage-toggle-switch', [
