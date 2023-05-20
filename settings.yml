@@ -1,7 +1,7 @@
 icon_right:
-  default: "grip-vertical"
-icon_left:
   default: "list"
+icon_left:
+  default: "grip-vertical"
 url_left:
   default: "https://www.meta.discourse.org/latest"
 url_right:
