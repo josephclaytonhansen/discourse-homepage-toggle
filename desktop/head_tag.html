@@ -4,7 +4,7 @@ let left = settings.icon_left
 let right = settings.icon_right
 
 
-window.addEventListener('popstate', function (event) {
+api.onPageChange((url, title) => {
 let temp = [settings.url_right.split("/latest")[0]+"/", settings.url_left.split("/latest")[0]+"/"]
 console.log(temp, window.location.href, window.location.href == temp[0], window.location.href == temp[1])
 if (window.location.href == temp[0] || window.location.href == temp[1]){
