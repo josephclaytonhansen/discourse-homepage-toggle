@@ -5,36 +5,29 @@ const {
 let left = settings.icon_left
 let right = settings.icon_right
 
+if (settings.url_left.endsWith("/latest")){
+var left_route = settings.url_left.split("latest")[0]} else {left_route = settings.url_left}
+if (settings.url_right.endsWith("/latest")){
+var right_route = settings.url_right.split("latest")[0]} else {right_route = settings.url_right}
+api.onPageChange((url) => {
 
-api.registerConnectorClass('below-site-header', 'homepage-toggle', {
-
-    setupComponent(args, component) {
-        if (settings.url_left.endsWith("/latest")){
-        var left_route = settings.url_left.split("latest")[0]} else {left_route = settings.url_left}
-        if (settings.url_right.endsWith("/latest")){
-        var right_route = settings.url_right.split("latest")[0]} else {right_route = settings.url_right}
-        api.onPageChange((url) => {
-
-            // Check if we're on the homepage 
-            if (url === "/" || url == left_route || url == right_route) {
-                api.decorateWidget('header-icons:before', helper => {
-                    return helper.h('li', [
-                        helper.h('label.homepage-toggle-switch', [
-                            helper.h('input.homepage-toggle-checkbox', {
-                                type: 'checkbox'
-                            }),
-                            helper.h("span.homepage-toggle-thumb", [
-                                helper.h("i.tt-left", iconNode(right)),
-                                helper.h("i.tt-right", iconNode(left))
-                            ])
-                        ])
+    // Check if we're on the homepage 
+    if (url === "/" || url == left_route || url == right_route) {
+        api.decorateWidget('header-icons:before', helper => {
+            return helper.h('li', [
+                helper.h('label.homepage-toggle-switch', [
+                    helper.h('input.homepage-toggle-checkbox', {
+                        type: 'checkbox'
+                    }),
+                    helper.h("span.homepage-toggle-thumb", [
+                        helper.h("i.tt-left", iconNode(right)),
+                        helper.h("i.tt-right", iconNode(left))
                     ])
-                })
-            }
+                ])
+            ])
         })
     }
 })
-
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
