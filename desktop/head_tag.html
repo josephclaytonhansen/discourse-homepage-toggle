@@ -36,7 +36,7 @@ api.onPageChange((url) => {
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    document.querySelectorAll(".homepage-toggle-checkbox").addEventListener("click", (event) => {
+    document.querySelectorAll(".homepage-toggle-checkbox")forEach(n => {n.addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
         if (s == true) {
             window.location.replace(settings.url_right)
@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (window.location.href == settings.url_right) {
         document.querySelector(".homepage-toggle-checkbox").checked = true
     }
+})
 })
 
 </script>
