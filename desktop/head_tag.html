@@ -9,21 +9,14 @@ let right = settings.icon_right
 api.registerConnectorClass('below-site-header', 'homepage-toggle', {
 
     setupComponent(args, component) {
-
-
-        var topMenuRoutes = component.siteSettings.top_menu.split('|').map(function(route) {
-            return '/' + route
-        });
-
-        // The first page listed in the 'top_menu' setting is your homepage
-        // lets assign it to a variable
-        var homeRoute = topMenuRoutes[0];
-
-        // This calls our code whenever the page changes
+        if (settings.url_left.endsWith("/latest")){
+        var left_route = settings.url_left.split("latest")[0]} else {left_route = settings.url_left}
+        if (settings.url_right.endsWith("/latest")){
+        var right_route = settings.url_right.split("latest")[0]} else {right_route = settings.url_right}
         api.onPageChange((url) => {
 
             // Check if we're on the homepage 
-            if (url === "/" || url === homeRoute) {
+            if (url === "/" || url == left_route || url == right_route) {
                 api.decorateWidget('header-icons:before', helper => {
                     return helper.h('li', [
                         helper.h('label.homepage-toggle-switch', [
