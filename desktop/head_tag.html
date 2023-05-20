@@ -4,10 +4,7 @@ let left = settings.icon_left
 let right = settings.icon_right
 
 
-api.onPageChange((url, title) => {
-let temp = [settings.url_right.split("/latest")[0]+"/", settings.url_left.split("/latest")[0]+"/"]
-console.log(temp, window.location.href, window.location.href == temp[0], window.location.href == temp[1])
-if (window.location.href == temp[0] || window.location.href == temp[1]){
+
     api.decorateWidget('header-icons:before', helper => {
         return helper.h('li', [
             helper.h('label.homepage-toggle-switch', [
@@ -19,8 +16,11 @@ if (window.location.href == temp[0] || window.location.href == temp[1]){
             ])
         ])
     })
-} else {
-    document.querySelector(".homepage-toggle-switch").remove()
+    api.onPageChange((url, title) => {
+let temp = [settings.url_right.split("/latest")[0]+"/", settings.url_left.split("/latest")[0]+"/"]
+console.log(temp, window.location.href, window.location.href == temp[0], window.location.href == temp[1])
+if (window.location.href == temp[0] || window.location.href == temp[1]){} else {document.querySelector(".homepage-toggle-switch").remove()
+    
 }
 })
 
