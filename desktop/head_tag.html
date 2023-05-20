@@ -28,15 +28,15 @@ api.onPageChange((url) => {
         })
     } else {
         document.querySelectorAll(".homepage-toggle-switch").forEach(n => {
-            n.textContent = '';
-            n.remove();
+            n.textContent = ''
+            n.remove()
         })
     }
 })
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    document.querySelectorAll(".homepage-toggle-checkbox")forEach(n => {n.addEventListener("click", (event) => {
+    document.querySelectorAll(".homepage-toggle-checkbox").forEach(n => {n.addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
         if (s == true) {
             window.location.replace(settings.url_right)
