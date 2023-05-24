@@ -16,9 +16,11 @@ api.decorateWidget('header-icons:before', helper => {
 })
 
 api.onPageChange(() => {
-    console.log(settings.url_right, window.location.href, settings.url_left, )
+    let l = settings.url_left.split("latest")[0]
+    let r = settings.url_right.split("latest")[0]
+    console.log(r, window.location.href, l)
 let c = document.querySelector(".homepage-toggle-switch")
-    if (settings.url_right == window.location.href || settings.url_left == window.location.href){
+    if (r == window.location.href || l == window.location.href){
         c.classList.remove("inv-width")
         console.log(c.classList)
     } else {
