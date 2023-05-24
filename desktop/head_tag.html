@@ -15,9 +15,16 @@ api.decorateWidget('header-icons:before', helper => {
     ])
 })
 
-
+ 
 
 window.addEventListener("DOMContentLoaded", (event) => {
+    let c = document.querySelector(".homepage-toggle-switch")
+    if (settings.url_right != window.location.href && settings.url_left != window.location.href ||){
+        c.classList.add("inv-width")
+    } else {
+        c.classList.remove("inv-width")
+    }
+
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
