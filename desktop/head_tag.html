@@ -57,7 +57,7 @@ api.onPageChange(() => {
     let r = settings.url_right.split("latest")[0]
 
     let c = document.querySelector(".homepage-toggle-switch")
-    if (r == window.location.href.split("latest")[0] || l == window.location.href) {
+    if (r == window.location.href.split("latest")[0] || l == window.location.href.split("latest")[0]) {
         c.classList.remove("inv-width")
 
     } else {
