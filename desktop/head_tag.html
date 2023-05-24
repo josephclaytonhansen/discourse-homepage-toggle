@@ -25,12 +25,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (stored === null) {
         window.localStorage.setItem("homepage-side", "left")
     }
+    let c = document.querySelector(".homepage-toggle-switch")
+    if (window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){c.classList.remove("inv-width")}
 })
 
 api.onPageChange(() => {
     let stored = window.localStorage.getItem("homepage-side")
     if (stored == "right"){
-        if(window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){window.location.replace(settings.url_right)}
+        if (window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){window.location.replace(settings.url_right)}
     }
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
