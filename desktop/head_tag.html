@@ -21,18 +21,21 @@ api.decorateWidget('header-icons:before', helper => {
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
-let stored = window.localStorage.getItem("homepage-side")
-if (stored === null){window.localStorage.setItem("homepage-side", "left")
-document.querySelector(".homepage-toggle-checkbox").checked = (window.localStorage.getItem("homepage-side") == "right")
+    let stored = window.localStorage.getItem("homepage-side")
+    if (stored === null) {
+        window.localStorage.setItem("homepage-side", "left")
+        console.log(window.localStorage.getItem("homepage-side"))
+        document.querySelector(".homepage-toggle-checkbox").checked = (window.localStorage.getItem("homepage-side") == "right")
 
-if (document.querySelector(".homepage-toggle-checkbox").checked == true) {
+        if (document.querySelector(".homepage-toggle-checkbox").checked == true) {
             window.location.replace(settings.url_right)
             window.localStorage.setItem("homepage-side", "right")
         } else {
             window.location.replace(settings.url_left)
             window.localStorage.setItem("homepage-side", "left")
         }
-    }})
+    }
+})
 
 api.onPageChange(() => {
 
@@ -64,6 +67,5 @@ api.onPageChange(() => {
 
     }
 })
-
 
 </script>
