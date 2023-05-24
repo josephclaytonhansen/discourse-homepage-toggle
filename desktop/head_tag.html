@@ -16,21 +16,6 @@ api.decorateWidget('header-icons:before', helper => {
 })
 
 api.onPageChange(() => {
-    let l = settings.url_left.split("latest")[0]
-    let r = settings.url_right.split("latest")[0]
-    console.log(r, window.location.href, l)
-let c = document.querySelector(".homepage-toggle-switch")
-    if (r == window.location.href || l == window.location.href){
-        c.classList.remove("inv-width")
-        console.log(c.classList)
-    } else {
-        c.classList.add("inv-width")
-        console.log(c.classList)
-    }})
- 
-
-window.addEventListener("DOMContentLoaded", (event) => {
-    
 
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
     {
@@ -45,6 +30,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (window.location.href == settings.url_right){
         document.querySelector(".homepage-toggle-checkbox").checked = true
     }
-})
+
+
+    let l = settings.url_left.split("latest")[0]
+    let r = settings.url_right.split("latest")[0]
+    console.log(r, window.location.href, l)
+let c = document.querySelector(".homepage-toggle-switch")
+    if (r == window.location.href || l == window.location.href){
+        c.classList.remove("inv-width")
+        console.log(c.classList)
+    } else {
+        c.classList.add("inv-width")
+        console.log(c.classList)
+    }})
+ 
+
 
 </script>
