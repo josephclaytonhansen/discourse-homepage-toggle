@@ -19,7 +19,10 @@ api.decorateWidget('header-icons:before', helper => {
     ])
 })
 
+let stored = window.localStorage.getItem("homepage-side")
+if (stored === null){window.localStorage.setItem("homepage-side", "left")}
 document.querySelector(".homepage-toggle-checkbox").checked = (window.localStorage.getItem("homepage-side") == "right")
+
 if (document.querySelector(".homepage-toggle-checkbox").checked == true) {
             window.location.replace(settings.url_right)
             window.localStorage.setItem("homepage-side", "right")
@@ -29,10 +32,6 @@ if (document.querySelector(".homepage-toggle-checkbox").checked == true) {
         }
 
 api.onPageChange(() => {
-    let stored = window.localStorage.getItem("homepage-side")
-    if (stored === null){window.localStorage.setItem("homepage-side", "left")}
-
-    
 
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
