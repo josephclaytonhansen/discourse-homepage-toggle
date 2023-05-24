@@ -24,14 +24,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let stored = window.localStorage.getItem("homepage-side")
     if (stored === null) {
         window.localStorage.setItem("homepage-side", "left")
-        console.log(window.localStorage.getItem("homepage-side"))
-    } else if (stored == "right"){
-        if(window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){window.location.replace(settings.url_right)}
     }
 })
 
 api.onPageChange(() => {
-
+    let stored = window.localStorage.getItem("homepage-side")
+    if (stored == "right"){
+        if(window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){window.location.replace(settings.url_right)}
+    }
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
         if (s == true) {
