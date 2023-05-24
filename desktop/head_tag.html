@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         window.localStorage.setItem("homepage-side", "left")
         console.log(window.localStorage.getItem("homepage-side"))
     } else if (stored == "right"){
-        window.location.replace(settings.url_right)
+        if(window.location.href == settings.url_left.split("latest")[0]){window.location.replace(settings.url_right)}
     }
 })
 
