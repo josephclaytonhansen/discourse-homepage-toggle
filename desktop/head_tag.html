@@ -26,8 +26,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
         window.localStorage.setItem("homepage-side", "left")
     }
     let c = document.querySelector(".homepage-toggle-switch")
-    console.log(window.location.href.split("latest")[0], settings.url_left.split("latest")[0], c, settings.url_left.split("latest")[0] == window.location.href.split("latest")[0])
-    if (window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){c.classList.remove("inv-width")}
+    if (window.location.href.split("latest")[0] == settings.url_left.split("latest")[0]){
+        c.classList.remove("inv-width")
+        console.log(c.classList)
+    }
 })
 
 api.onPageChange(() => {
