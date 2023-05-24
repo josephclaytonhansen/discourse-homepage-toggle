@@ -19,7 +19,7 @@ api.decorateWidget('header-icons:before', helper => {
 
 window.addEventListener("DOMContentLoaded", (event) => {
     let c = document.querySelector(".homepage-toggle-switch")
-    if !settings.url_right != window.location.href && settings.url_left != window.location.href){
+    if (!settings.url_right != window.location.href && settings.url_left != window.location.href){
         console.log('not homepage', c.classList)
         c.classList.add("inv-width")
     } else {
