@@ -48,7 +48,7 @@ api.onPageChange(() => {
         }
 
     })
-    if (window.location.href == settings.url_right.split("latest")[0]) {
+    if (window.location.href.split("latest")[0] == settings.url_right.split("latest")[0]) {
         document.querySelector(".homepage-toggle-checkbox").checked = true
     }
 
@@ -57,7 +57,7 @@ api.onPageChange(() => {
     let r = settings.url_right.split("latest")[0]
 
     let c = document.querySelector(".homepage-toggle-switch")
-    if (r == window.location.href || l == window.location.href) {
+    if (r == window.location.href.split("latest")[0] || l == window.location.href) {
         c.classList.remove("inv-width")
 
     } else {
