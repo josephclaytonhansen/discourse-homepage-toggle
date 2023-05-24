@@ -19,18 +19,33 @@ api.decorateWidget('header-icons:before', helper => {
     ])
 })
 
+document.querySelector(".homepage-toggle-checkbox").checked = (window.localStorage.getItem("homepage-side") == "right")
+if (document.querySelector(".homepage-toggle-checkbox").checked == true) {
+            window.location.replace(settings.url_right)
+            window.localStorage.setItem("homepage-side", "right")
+        } else {
+            window.location.replace(settings.url_left)
+            window.localStorage.setItem("homepage-side", "left")
+        }
+
 api.onPageChange(() => {
+    let stored = window.localStorage.getItem("homepage-side")
+    if (stored === null){window.localStorage.setItem("homepage-side", "left")}
+
+    
 
     document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
         if (s == true) {
             window.location.replace(settings.url_right)
+            window.localStorage.setItem("homepage-side", "right")
         } else {
             window.location.replace(settings.url_left)
+            window.localStorage.setItem("homepage-side", "left")
         }
 
     })
-    if (window.location.href == settings.url_right) {
+    if (window.location.href == settings.url_right.split("latest")[0]) {
         document.querySelector(".homepage-toggle-checkbox").checked = true
     }
 
