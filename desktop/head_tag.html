@@ -1,12 +1,16 @@
 <script type="text/discourse-plugin" version="0.0.1">
-    const { iconNode } = require("discourse-common/lib/icon-library")
+const {
+    iconNode
+} = require("discourse-common/lib/icon-library")
 let left = settings.icon_left
 let right = settings.icon_right
- 
+
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
         helper.h('label.homepage-toggle-switch', [
-            helper.h('input.homepage-toggle-checkbox', {type: 'checkbox'}),
+            helper.h('input.homepage-toggle-checkbox', {
+                type: 'checkbox'
+            }),
             helper.h("span.homepage-toggle-thumb", [
                 helper.h("i.tt-left", iconNode(right)),
                 helper.h("i.tt-right", iconNode(left))
@@ -17,33 +21,32 @@ api.decorateWidget('header-icons:before', helper => {
 
 api.onPageChange(() => {
 
-    document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => 
-    {
+    document.querySelector(".homepage-toggle-checkbox").addEventListener("click", (event) => {
         let s = document.querySelector(".homepage-toggle-checkbox").checked
-        if (s == true){
+        if (s == true) {
             window.location.replace(settings.url_right)
         } else {
             window.location.replace(settings.url_left)
         }
 
     })
-    if (window.location.href == settings.url_right){
+    if (window.location.href == settings.url_right) {
         document.querySelector(".homepage-toggle-checkbox").checked = true
     }
 
 
     let l = settings.url_left.split("latest")[0]
     let r = settings.url_right.split("latest")[0]
-    console.log(r, window.location.href, l)
-let c = document.querySelector(".homepage-toggle-switch")
-    if (r == window.location.href || l == window.location.href){
+
+    let c = document.querySelector(".homepage-toggle-switch")
+    if (r == window.location.href || l == window.location.href) {
         c.classList.remove("inv-width")
-        console.log(c.classList)
+
     } else {
         c.classList.add("inv-width")
-        console.log(c.classList)
-    }})
- 
+
+    }
+})
 
 
 </script>
